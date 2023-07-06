@@ -15,6 +15,32 @@ remotely and are not always on, like desktops and laptops.
 
 ## Getting Started
 
+### Docker
+
+> If you want to support wake-on-lan, run the `/scripts/hash_password.ts` script
+> to generate a password hash and salt.
+>
+> ```sh
+> docker run --rm -it -v ghcr.io/lixquid/starburst-landingpage:latest deno run --allow-env /scripts/hash_password.ts
+> ```
+
+1. Copy the `backend/config.example.json` file to `config.json`, and update the
+   values as needed.
+2. Run the server.
+
+   ```sh
+   docker run -v "$(pwd)/config.json:/app/config.json" -p 8080:8080 ghcr.io/lixquid/starburst-landingpage:latest
+   ```
+
+### From Source
+
+> If you want to support wake-on-lan, run the `scripts/hash_password.ts` script
+> to generate a password hash and salt.
+>
+> ```sh
+> deno run --allow-env scripts/hash_password.ts
+> ```
+
 1. Run the `scripts/package_frontend.ts` script to build and package the
    frontend into the correct locations in the backend.
 
@@ -29,18 +55,6 @@ remotely and are not always on, like desktops and laptops.
    cd backend
    deno run --allow-net --allow-read --unstable main.ts
    ```
-
-If you want to support wake-on-lan:
-
-1. Run the `scripts/hash_password.ts` script to generate a password hash.
-
-   ```sh
-   deno run --allow-env scripts/hash_password.ts
-   ```
-2. Edit the `backend/config.json` file, putting the password hash and salt in
-   the `password.hash` and `password.salt` fields, respectively.
-3. Add the MAC addresses of the devices you want to support wake-on-lan for to
-   the `servers[].mac` field in the `backend/config.json` file.
 
 For more information, all scripts and the server support the `--help` flag.
 
