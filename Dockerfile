@@ -21,3 +21,8 @@ WORKDIR /app
 
 ENTRYPOINT ["deno", "run", "--allow-env"]
 CMD ["--allow-net", "--allow-read", "--unstable", "/app/backend/main.ts"]
+
+LABEL org.opencontainers.image.source=https://github.com/lixquid/deno-starburst-landingpage
+LABEL org.opencontainers.image.description="Starburst Landing Page Server"
+LABEL org.opencontainers.image.authors=lixquid
+LABEL org.opencontainers.image.licenses=MIT
