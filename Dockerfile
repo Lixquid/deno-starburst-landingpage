@@ -19,7 +19,7 @@ RUN deno cache /app/backend/main.ts
 
 WORKDIR /app
 
-CMD ["deno", "run", "--allow-env", "--allow-net", "--allow-read", "--unstable", "/app/backend/main.ts"]
+CMD ["deno", "run", "-A", "--unstable", "/app/backend/main.ts"]
 
 LABEL org.opencontainers.image.source=https://github.com/lixquid/deno-starburst-landingpage
 LABEL org.opencontainers.image.description="Starburst Landing Page Server"
