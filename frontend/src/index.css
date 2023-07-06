@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: local("Bebas Neue"), url(./fonts/bebasneue-regular.ttf);
+}
+
+:root {
+    --color-primary: #fd8628;
+    --color-dark: #463f55;
+    --color-active: #37a42c;
+    --color-inactive: #bf0303;
+}
+
+html,
+body {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+
+    background: url(./bg.png) 50% / cover;
+}
+
+#title {
+    position: absolute;
+    top: 0.4em;
+    right: 0.5em;
+
+    font-size: 9em;
+    line-height: 1;
+    color: var(--color-primary);
+    text-shadow: 0.05em 0.05em 0 var(--color-dark);
+}
+
+#servers {
+    position: absolute;
+    bottom: 0.4em;
+    left: 0.5em;
+
+    font-size: 7em;
+    line-height: 1;
+    text-shadow: 0.05em 0.05em 0 var(--color-dark);
+
+    color: var(--color-primary);
+}
+
+.server > a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.server .server-status {
+    color: var(--color-primary);
+}
+
+.server .server-status.server-status-active {
+    color: var(--color-active);
+}
+
+.server .server-status.server-status-inactive {
+    color: var(--color-inactive);
+}

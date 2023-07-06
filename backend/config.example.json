@@ -1,0 +1,28 @@
+{
+    "name": "My Devices",
+    "password": {
+        "hash": "7abb56376f439406b13c2db5dd7fce0c6d9334c2d7ad89355f1e812d6bd3d98f",
+        "salt": "1268edef0dd9c6b497c1ca2e36532a65",
+        "advanced": {
+            "memory": 4096,
+            "iterations": 3,
+            "parallelism": 1
+        }
+    },
+    "servers": [
+        {
+            "name": "Server 1",
+            "mac": "01-23-45-67-89-ab",
+            "hostname": "192.168.1.100"
+        },
+        {
+            "name": "Server 2",
+            "hostname": "192.168.1.101",
+            "mac": "01-23-45-67-89-ac"
+        },
+        {
+            "name": "No WOL Support",
+            "hostname": "192.168.1.200"
+        }
+    ]
+}

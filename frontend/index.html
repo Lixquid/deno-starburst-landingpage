@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--
+        Templating Engine: Eta (https://eta.js.org/)
+        Tags have changed to ["{{", "}}"] from ["<%", "%>"] to avoid parsing
+            issues with vite/parse5.
+        Template Arguments:
+            name: string,
+            servers: {
+                name: string,
+                active: boolean,
+                controllable: boolean
+            }[]
+    -->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{= it.name }}</title>
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" href="./src/favicon.png" />
+        <link
+            rel="shortcut icon"
+            sizes="192x192"
+            href="./src/favicon-192.png"
+        />
+        <link
+            rel="shortcut icon"
+            sizes="128x128"
+            href="./src/favicon-128.png"
+        />
+
+        <link
+            rel="stylesheet"
+            href="bootstrap/dist/css/bootstrap-reboot.min.css"
+        />
+        <link rel="stylesheet" href="./src/index.css" />
+    </head>
+    <body>
+        <div id="title">{{= it.name }}</div>
+        <div id="servers">
+            {{ it.servers.forEach((server, i) => { }}
+            <div class="server">
+                {{ if (server.controllable) { }}
+                <a href="/wol/{{= i }}">
+                    {{ } }} {{ if (server.active) { }}
+                    <span class="server-status server-status-active">
+                        &bullet;
+                    </span>
+                    {{ } else { }}
+                    <span class="server-status server-status-inactive">
+                        &bullet;
+                    </span>
+                    {{ } }} {{= server.name }} {{ if (server.controllable) { }}
+                </a>
+                {{ } }}
+            </div>
+            {{ }) }}
+        </div>
+    </body>
+</html>
