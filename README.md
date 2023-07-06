@@ -43,3 +43,15 @@ If you want to support wake-on-lan:
    the `servers[].mac` field in the `backend/config.json` file.
 
 For more information, all scripts and the server support the `--help` flag.
+
+<details>
+<summary><h2>Developer Documentation</h2></summary>
+
+### Preparing a new release
+
+1. Create an entry in [CHANGELOG.md](CHANGELOG.md).
+2. Update the README.md file as needed.
+3. Commit with `Version x.y.z` as the commit message.
+4. Tag the commit with `vX.Y.Z`.
+
+</details>
